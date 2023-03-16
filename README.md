@@ -1,4 +1,4 @@
-# Elokuva & sarja foorumi
+# Movies & Series Forum
 
 
 Sovellus pohjautuu kurssimateriaalissa olevaan keskustelusovellukseen. Sovellus on foorumi, jossa voi jakaa ja kysyä katseluvinkkejä elokuviin ja sarjoihin ja yleisesti keskustella elokuvista ja sarjoista. Olisi tarkoitus, että muiden kysymyksiin/ vinkkeihin/ keskustelunaloituksiin voi kommentoida ja tykätä.
