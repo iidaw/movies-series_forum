@@ -30,3 +30,13 @@ CREATE TABLE likes (
     liker_id INTEGER REFERENCES users,
     message_id INTEGER REFERENCES messages
 );
+
+INSERT INTO categories (category_name) VALUES
+('Action'),
+('Comedy'),
+('Drama'),
+('Fantasy'),
+('Horror'),
+('Romance'),
+('Thriller')
+('Other');
