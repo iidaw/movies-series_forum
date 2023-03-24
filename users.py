@@ -41,3 +41,9 @@ def user_id():
 def logout():
     del session["user_id"]
     del session["user_name"]
+
+def is_username_available(username):
+    sql = "SELECT username FROM users WHERE username=:username"
+    result= db.session.execute(sql, {"username":username})
+
+    return result.fetchone()[0]
