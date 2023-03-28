@@ -1,9 +1,14 @@
 {% if session.username %}
+<h2>Movies & Series Forum</h2>
 <p>You are logged in as <b>{{ session.username }}</b></p>
-<a href="/logout">Logout</a>
+<br>
+Messages
+<hr>
+<!-- miten saada viestit näkymään?? -->
+<br>
+<a href="/newmessage">Start a conversation</a> | <a href="/logout">Logout</a>
 {% else %}
 <h2>Movies & Series Forum</h2>
 <br>
-<a href="/register">register here</a> |
-<a href="/login">login here</a>
+<a href="/register">register here</a> | <a href="/login">login here</a>
 {% endif %}

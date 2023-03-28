@@ -1,0 +1,23 @@
+{% block content %}
+
+<h2 class="text-center">Start a new conversation</h2>
+<form action="/newmessage" method="post">
+<div class="text-center">
+
+<p>Title<br>
+    <input type="text" name="title" minlength="1" maxlength="30"></p>
+
+<!-- lisätä kategoriavaihtoehdot fiksusti ja miten yhdistää se oikein? --> 
+
+    <p>Message<br>
+    <textarea name="message" rows="10" cols="70" maxlength="1000"></textarea></p>
+    <p>
+    <p>
+
+    <input type="hidden" name="csrf_token" value="{{ session.csrf_token }}">
+    <input type="submit" value="Post">
+
+    </form>
+
+</div>
+{% endblock %}
