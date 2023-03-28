@@ -15,7 +15,7 @@ CREATE TABLE messages (
 
 CREATE TABLE categories (
     id SERIAL PRIMARY KEY,
-    category_name TEXT,
+    category_name TEXT UNIQUE
 );
 
 CREATE TABLE comments (
@@ -38,5 +38,5 @@ INSERT INTO categories (category_name) VALUES
 ('Fantasy'),
 ('Horror'),
 ('Romance'),
-('Thriller')
+('Thriller'),
 ('Other');
