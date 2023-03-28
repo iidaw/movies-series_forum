@@ -1,3 +1,9 @@
+{% if session.username %}
+<p>You are logged in as <b>{{ session.username }}</b></p>
+<a href="/logout">Logout</a>
+{% else %}
 <h2>Movies & Series Forum</h2>
-<br/>
-<a href="/register">Register</a>
+<br>
+<a href="/register">register here</a> |
+<a href="/login">login here</a>
+{% endif %}
