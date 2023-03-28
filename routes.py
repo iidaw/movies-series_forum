@@ -1,6 +1,6 @@
 from app import app
 from flask import abort, render_template, redirect, request, session
-import users
+import users, messages
 
 
 @app.route("/")
@@ -55,10 +55,25 @@ def logout():
     users.logout()
     return redirect("/")
 
-@app.route("/newmessage")
+@app.route("/newmessage", methods=["GET", "POST"])
 def new_message():
     if request.method == "GET":
         return render_template("newmessage.html")
+    
+    if request.method == "POST":
+        users.check_csrf()
+        message_title = request.form["title"]
+
+        if len(message_title) < 1:
+            return render_template("error.html", message="Title can't be empty")
+        content = request.form["message"]
+
+        if len(content) < 10:
+            return render_template("error.html", message="Please write at least 10 characters")
+        category_id = request.form["category_id"]
+        messages.add_message(message_title, content, category_id, users.user_id())
+        return redirect("/")
+
 
 @app.route("/category/<int:id>")
 def categories():
