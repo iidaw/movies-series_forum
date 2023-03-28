@@ -18,6 +18,9 @@ def register():
 
         if is_username_available > 0:
             return render_template("error.html", message="Username is not available for use")
+        
+        if len(username) < 4:
+            render_template("error.html", message="Username can't be shorter than 4 characters")
 
         password1 = request.form["password1"]
         password2 = request.form["password2"]
@@ -25,24 +28,39 @@ def register():
         if password1 != password2:
             return render_template("error.html", message="Passwords don't match")
         
-        else: return render_template("error.html", message="Register was unsuccesfull")
+        if len(password1) < 6:
+            return render_template("error.html", message="Password must be at least 6 characters")
+        
+        if users.register(username, password1):
+            return redirect("/")
+        
+        else: return render_template("error.html", message="Registering failed")
 
-@app.route("/login")
+@app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "GET":
         return render_template("login.html")
+    
+    if request.method == "POST":
+        username = request.form["username"]
+        password = request.form["password"]
+
+        if not users.login(username, password):
+            return render_template("error.html", message="Wrong username or password")
+
+        return redirect("/")
 
 @app.route("/logout")
 def logout():
-    if request.method == "GET":
-        return render_template("logout.html")
+    users.logout()
+    return redirect("/")
 
 @app.route("/newmessage")
 def new_message():
     if request.method == "GET":
         return render_template("newmessage.html")
 
-@app.route("/categories")
+@app.route("/category/<int:id>")
 def categories():
     if request.method == "GET":
         return render_template("categories.html")
