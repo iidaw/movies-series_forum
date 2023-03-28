@@ -2,12 +2,13 @@ import os
 from db import db
 from flask import session, request, abort
 from werkzeug.security import check_password_hash, generate_password_hash
+from sqlalchemy.sql import text
 
 def register(username, password):
     hash_value = generate_password_hash(password)
 
     try:
-        sql = "INSERT INTO users (username,password) VALUES (:username,:password)"
+        sql = text("INSERT INTO users (username,password) VALUES (:username,:password)")
         db.session.execute(sql, {"username":username, "password":hash_value})
         db.session.commit()
     except:
@@ -16,7 +17,7 @@ def register(username, password):
 
 
 def login(username, password):
-    sql = "SELECT id, password FROM users WHERE username=:username"
+    sql = text("SELECT id, password FROM users WHERE username=:username")
     result = db.session.execute(sql, {"username":username})
     user = result.fetchone()
     if not user:
@@ -36,14 +37,14 @@ def check_csrf():
 
 
 def user_id():
-    return session.get("user_id",0)
+    return session.get("user_id")
 
 def logout():
     del session["user_id"]
-    del session["user_name"]
+    del session["username"]
 
 def is_username_available(username):
-    sql = "SELECT username FROM users WHERE username=:username"
+    sql = text("SELECT COUNT (*) FROM users WHERE username=:username")
     result= db.session.execute(sql, {"username":username})
 
     return result.fetchone()[0]
