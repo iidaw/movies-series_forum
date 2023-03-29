@@ -5,7 +5,7 @@ import users, messages
 
 @app.route("/")
 def index():
-    return render_template("index.html", messages=list)
+    return render_template("index.html", messages=messages.get_messages())
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
