@@ -4,7 +4,12 @@
 <br>
 Messages
 <hr>
-<!-- miten saada viestit näkymään?? -->
+{% for message in messages %}
+<i>Message:</i> {{ message.content }}
+<p>
+<i>Sender:</i> {{ message.username }}
+<hr>
+{% endfor %}
 <br>
 <a href="/newmessage">Start a conversation</a> | <a href="/logout">Logout</a>
 {% else %}
