@@ -20,7 +20,7 @@ def register():
             return render_template("error.html", message="Username is not available for use")
         
         if len(username) < 4:
-            render_template("error.html", message="Username can't be shorter than 4 characters")
+            return render_template("error.html", message="Username can't be shorter than 4 characters")
 
         password1 = request.form["password1"]
         password2 = request.form["password2"]
