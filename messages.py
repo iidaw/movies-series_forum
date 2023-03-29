@@ -11,6 +11,7 @@ def add_message(title, content, category_id, user_id):
     return result
 
 def get_messages():
-    sql = text("SELECT M.content, U.username FROM messages M, users U WHERE M.user_id=U.id ORDER BY M.id")
+    sql = text("""SELECT M.title, M.content, U.username, C.category_name FROM messages M, users U, categories C 
+            WHERE M.user_id=U.id AND M.category_id=C.id ORDER BY M.id""")
     result = db.session.execute(sql)
     return result.fetchall()
