@@ -3,9 +3,9 @@ from flask import session
 from sqlalchemy.sql import text
 import users
 
-def add_message(title, content, user_id, category_id):
+def add_message(title, content, category_id, user_id):
     sql = text("""INSERT INTO messages (title, content, visible, category_id, user_id)
-            VALUES (:title, :content, TRUE, :category_id, user_id) RETURNING id""")
+            VALUES (:title, :content, TRUE, :category_id, :user_id) RETURNING id""")
     result = db.session.execute(sql, {"title":title, "content":content, "category_id":category_id, "user_id":user_id}).fetchone()[0]
     db.session.commit()
     return result
