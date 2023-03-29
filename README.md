@@ -3,6 +3,13 @@
 
 Sovellus pohjautuu kurssimateriaalissa olevaan keskustelusovellukseen. Sovellus on foorumi, jossa voi jakaa ja kysyä katseluvinkkejä elokuviin ja sarjoihin ja yleisesti keskustella elokuvista ja sarjoista. Olisi tarkoitus, että muiden kysymyksiin/ vinkkeihin/ keskustelunaloituksiin voi kommentoida ja tykätä.
 
+## Toimivat ominaisuudet
+- Käyttäjä voi luoda käyttäjätilin
+- Käyttäjä voi kirjautua sisään
+- Käyttäjä voi kirjautua ulos
+- Käyttäjä näkee kaikki julkaistut viestit, jos sellaisia on
+- Käyttäjä voi kirjoittaa alueella uuden viestin/ ketjun
+
 
 ## Mahdollisia ominaisuuksia
 - Käyttäjä voi luoda käyttäjätilin
