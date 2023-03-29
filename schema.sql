@@ -4,6 +4,11 @@ CREATE TABLE users (
     password TEXT
 );
 
+CREATE TABLE categories (
+    id SERIAL PRIMARY KEY,
+    category_name TEXT UNIQUE
+);
+
 CREATE TABLE messages (
     id SERIAL PRIMARY KEY,
     title TEXT,
@@ -11,11 +16,6 @@ CREATE TABLE messages (
     visible BOOLEAN,
     category_id INTEGER REFERENCES categories,
     user_id INTEGER REFERENCES users
-);
-
-CREATE TABLE categories (
-    id SERIAL PRIMARY KEY,
-    category_name TEXT UNIQUE
 );
 
 CREATE TABLE comments (
