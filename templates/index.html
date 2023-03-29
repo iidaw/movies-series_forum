@@ -2,12 +2,16 @@
 <h2>Movies & Series Forum</h2>
 <p>You are logged in as <b>{{ session.username }}</b></p>
 <br>
-Messages
+<h3><b>Messages</b></h3>
 <hr>
 {% for message in messages %}
-<i>Message:</i> {{ message.content }}
+<i>Category:</i> {{ message.category_name }}
 <p>
-<i>Sender:</i> {{ message.username }}
+<i>Title:</i> {{ message.title }}
+<p>
+<i>From user:</i> {{ message.username }}
+<p>
+<i>Message:</i> {{ message.content }}
 <hr>
 {% endfor %}
 <br>
@@ -15,5 +19,18 @@ Messages
 {% else %}
 <h2>Movies & Series Forum</h2>
 <br>
-<a href="/register">register here</a> | <a href="/login">login here</a>
+<h3><b>Messages</b></h3>
+<hr>
+{% for message in messages %}
+<i>Category:</i> {{ message.category_name }}
+<p>
+<i>Title:</i> {{ message.title }}
+<p>
+<i>From user:</i> {{ message.username }}
+<p>
+<i>Message:</i> {{ message.content }}
+<hr>
+{% endfor %}
+<br>
+To start a conversation or to comment <a href="/login">Login</a> or <a href="/register">Register</a>
 {% endif %}
