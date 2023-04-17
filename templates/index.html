@@ -1,27 +1,8 @@
-{% if session.username %}
-<h2>Movies & Series Forum</h2>
-<p>You are logged in as <b>{{ session.username }}</b></p>
-<br>
-<h3><b>Messages</b></h3>
-<hr>
-{% for message in messages %}
-<i>Category:</i> {{ message.category_name }}
+{% extends "layout.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
 <p>
-<i>Title:</i> {{ message.title }}
-<p>
-<i>From user:</i> {{ message.username }}
-<p>
-<i>Message:</i> {{ message.content }}
-<hr>
-{% endfor %}
-<br>
-<a href="/newmessage">Start a conversation</a> | <a href="/logout">Logout</a>
-{% else %}
-<h2>Movies & Series Forum</h2>
-<br>
-<h3><b>Messages</b></h3>
-<hr>
-<h3>Categories:</h3>
+<h3>Categories to browse:</h3>
 <a href="/category/1"> Action</a> <br>
 <a href="/category/2"> Comedy</a> <br>
 <a href="/category/3"> Drama</a> <br>
@@ -30,6 +11,14 @@
 <a href="/category/6"> Romance</a> <br>
 <a href="/category/7"> Thriller</a> <br>
 <a href="/category/8"> Other</a> <br>
+
+{% if session.user_id %}</b><br>
 <br>
+<a href="/newmessage">Start a conversation</a> <br>
+
+{% else %}
 To start a conversation or to comment <a href="/login">Login</a> or <a href="/register">Register</a>
 {% endif %}
+{% endblock %}
+
+
