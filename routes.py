@@ -80,3 +80,8 @@ def category(id):
     category_name = categories.get_category_name(id)
     messages = categories.get_messages_cateory(id)
     return render_template("categories.html", category_name=category_name, id=id, messages=messages)
+
+@app.route("/message/<int:id>")
+def message(id):
+    message = messages.get_message(id)
+    return render_template("message.html", message=message, id=id)
