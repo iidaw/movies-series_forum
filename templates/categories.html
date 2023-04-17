@@ -1,0 +1,11 @@
+
+<h2>{{ category_name }}</h2>
+
+{% if not messages %}
+<h3> No conversations in this category yet </h3>
+{% endif %}
+
+    {% for message in messages %}
+    <p><a href="/message/{{ message.id }}">{{ message.title }}</a></p>
+    {% endfor %}
+    <hr>
