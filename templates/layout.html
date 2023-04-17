@@ -1,0 +1,22 @@
+<!doctype html>
+<title>Movies & Series Forum - {% block title %}{% endblock %}</title>
+<html>
+    <body>
+        <div id="top">
+            <h1>Movies & Series Forum</h1>
+            <a href="/">Home</a> | 
+            {% if session.user_id %}
+            <a href="/logout">Logout</a>
+            <br>
+            <br>
+            You are logged in as <b>{{ session.username }}</b><br>
+            <br>
+            {% else %}
+            <a href="/login">Login</a> | <a href="/register">Register</a>
+            {% endif %}
+        </div>
+        <hr>
+        {% block content %}{% endblock %}
+        <hr>
+      </body>
+</html>
