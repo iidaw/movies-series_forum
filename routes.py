@@ -1,6 +1,6 @@
 from app import app
 from flask import abort, render_template, redirect, request, session
-import users, messages
+import users, messages, categories
 
 
 @app.route("/")
@@ -76,6 +76,7 @@ def new_message():
 
 
 @app.route("/category/<int:id>")
-def categories():
-    if request.method == "GET":
-        return render_template("categories.html")
+def category(id):
+    category_name = categories.get_category_name(id)
+    messages = categories.get_messages_cateory(id)
+    return render_template("categories.html", category_name=category_name, id=id, messages=messages)
