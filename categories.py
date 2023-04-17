@@ -11,7 +11,7 @@ def get_category_name(category_id):
     result = db.session.execute(sql, {"id":category_id})
     return result.fetchone()[0]
 
-def get_category_messages(category_id):
+def get_messages_cateory(category_id):
     sql = text("SELECT id, title, content, category_id FROM messages WHERE category_id=:id")
     result = db.session.execute(sql, {"id":category_id})
     return result.fetchall()
