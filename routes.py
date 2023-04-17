@@ -1,6 +1,6 @@
 from app import app
 from flask import abort, render_template, redirect, request, session
-import users, messages, categories
+import users, messages, categories, comments
 
 
 @app.route("/")
@@ -84,4 +84,14 @@ def category(id):
 @app.route("/message/<int:id>")
 def message(id):
     message = messages.get_message(id)
-    return render_template("message.html", message=message, id=id)
+    comments = messages.get_message_comments(id)
+    return render_template("message.html", message=message, id=id, comments=comments)
+
+@app.route("/comment", methods=["POST"])
+def add_comment():
+    if request.method == "POST":
+        users.check_csrf()
+        message_id = request.form["message_id"]
+        content = request.form["content"]
+        comments.add_comment(content, users.user_id(), int(message_id))
+        return redirect("/message/" + str(message_id))
