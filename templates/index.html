@@ -21,16 +21,15 @@
 <br>
 <h3><b>Messages</b></h3>
 <hr>
-{% for message in messages %}
-<i>Category:</i> {{ message.category_name }}
-<p>
-<i>Title:</i> {{ message.title }}
-<p>
-<i>From user:</i> {{ message.username }}
-<p>
-<i>Message:</i> {{ message.content }}
-<hr>
-{% endfor %}
+<h3>Categories:</h3>
+<a href="/category/1"> Action</a> <br>
+<a href="/category/2"> Comedy</a> <br>
+<a href="/category/3"> Drama</a> <br>
+<a href="/category/4"> Fantasy</a> <br>
+<a href="/category/5"> Horror</a> <br>
+<a href="/category/6"> Romance</a> <br>
+<a href="/category/7"> Thriller</a> <br>
+<a href="/category/8"> Other</a> <br>
 <br>
 To start a conversation or to comment <a href="/login">Login</a> or <a href="/register">Register</a>
 {% endif %}
