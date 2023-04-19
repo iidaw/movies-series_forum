@@ -5,7 +5,7 @@ import users, messages, categories, comments
 
 @app.route("/")
 def index():
-    return render_template("index.html", messages=messages.get_messages())
+    return render_template("index.html", categories = categories.get_categories())
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -95,3 +95,14 @@ def add_comment():
         content = request.form["content"]
         comments.add_comment(content, users.user_id(), int(message_id))
         return redirect("/message/" + str(message_id))
+    
+@app.route("/like_message", methods=["POST"])
+def like_message():
+    if request.method == "POST":
+        users.check_csrf()
+        message_id = request.form["message_id"]
+        if messages.has_user_liked_message(message_id, users.user_id()) == True:
+            return render_template("error.html", message="You have already liked this")
+        else:
+            messages.like_message(message_id, users.user_id())
+    return redirect("/message/" + str(message_id))
