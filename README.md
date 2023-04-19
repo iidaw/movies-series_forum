@@ -7,19 +7,23 @@ Sovellus pohjautuu kurssimateriaalissa olevaan keskustelusovellukseen. Sovellus 
 - Käyttäjä voi luoda käyttäjätilin
 - Käyttäjä voi kirjautua sisään
 - Käyttäjä voi kirjautua ulos
-- Käyttäjä näkee kaikki julkaistut viestit, jos sellaisia on
 - Käyttäjä voi kirjoittaa alueella uuden viestin/ ketjun
+- Käyttäjä voi selata eri kategorioita ja niiden viestejä
+- Käyttäjä voi katsoa ketjun sisältöä
+- Käyttäjä voi kommentoida aloitettuun ketjuun/ viestiin
+- Käyttäjä voi tykätä toisen ketjun aloituksesta
 
 
-## Mahdollisia ominaisuuksia
-- Käyttäjä voi luoda käyttäjätilin
-- Käyttääjä voi kirjautua sisään ja ulos
-- Käyttäjä voi kirjoittaa alueelle uuden viestin/ ketjun
-- Käyttäjä voi selata kategorioita
-- Käyttäjä voi selata ketjujen sisältöjä
-- Käyttäjä voi kommentoida jonkun toisen aloittamaan ketjuun/ viestiin
-- Käyttäjä voi tykätä toisen vinkistä/ viestistä
-- Käyttäjä voi hakea ketjuja/ viestejä hakusanoilla
+## Ei toimi vielä/ keskeneräisiä
+- Käyttäjä voi tykätä viestistä, mutta tykkäysten määrä ei näy oikein (näkyy kyllä tietokannassa, mutta ei sivulla) (keskeneräinen)
+- Käyttäjä voi hakea ketjuja/ viestejä hakusanoilla (ominaisuus ei vielä olemassa)
+- Ulkoasu miellyttävämmäksi viimeiseen palautukseen
+
+
+## Ideoita jatkokehitykseen
+- Käyttäjä voi tykätä viestien kommenteista
+- Käyttäjä voi vastata suoraan kommenttiin
+
 
 
 ## Käynnistysohjeet
