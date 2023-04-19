@@ -11,11 +11,11 @@
     <input id="button" type="submit" value="Like">
 </form>
 {% else %}
-<a href="/login">Log in</a> to like this message!
+<a href="/login">Login</a> to like this message!
 {% endif %}
 
 <hr>
-<h2>Comments:</h2>
+<h3>Comments:</h3>
 {% if comments %}
     {% for comment in comments %}
     <p><i>From user: {{ comment.username }}</i></p>
@@ -24,7 +24,7 @@
 {% endfor %}
 
 {% else %}
-<h4>No comments yet. Maybe write one. :)</h4>
+<b>No comments yet. Maybe write one. :)</b>
 
 {% endif %}
 
@@ -36,5 +36,5 @@
     <input type="hidden" name="csrf_token" value="{{ session.csrf_token }}">
     <input type="submit" value="Comment">
     {% else %}
-    <a href="/login">Log in</a> to add a comment!
+    <a href="/login">Login</a> to add a comment!
     {% endif %}
