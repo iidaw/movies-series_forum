@@ -34,7 +34,7 @@
 <form action="/comment" method="post">
     <h3>Add a comment:</h3>
     {% if session.user_id %}
-    <textarea name="content" rows="4" cols="40" required minlength="1" maxlength="500"></textarea></p>
+    <textarea name="content" rows="4" cols="40" required minlength="10" maxlength="500"></textarea></p>
     <input type="hidden" name="message_id" value="{{ id }}">
     <input type="hidden" name="csrf_token" value="{{ session.csrf_token }}">
     <input type="submit" value="Comment">
