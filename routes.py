@@ -85,7 +85,8 @@ def category(id):
 def message(id):
     message = messages.get_message(id)
     comments = messages.get_message_comments(id)
-    return render_template("message.html", message=message, id=id, comments=comments)
+    likes = messages.get_message_likes(id)
+    return render_template("message.html", message=message, id=id, comments=comments, likes=likes)
 
 @app.route("/comment", methods=["POST"])
 def add_comment():
