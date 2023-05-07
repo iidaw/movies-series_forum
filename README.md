@@ -1,7 +1,7 @@
 # Movies & Series Forum
 
 
-Sovellus pohjautuu kurssimateriaalissa olevaan keskustelusovellukseen. Sovellus on foorumi, jossa voi jakaa ja kysyä katseluvinkkejä elokuviin ja sarjoihin ja yleisesti keskustella elokuvista ja sarjoista. Olisi tarkoitus, että muiden kysymyksiin/ vinkkeihin/ keskustelunaloituksiin voi kommentoida ja tykätä.
+Sovellus pohjautuu kurssimateriaalissa olevaan keskustelusovellukseen. Sovellus on foorumi, jossa voi jakaa ja kysyä katseluvinkkejä elokuviin ja sarjoihin ja yleisesti keskustella elokuvista ja sarjoista. Myös muiden kysymyksiin/ vinkkeihin/ keskustelunaloituksiin voi kommentoida ja niistä voi tykätä.
 
 ## Toimivat ominaisuudet
 - Käyttäjä voi luoda käyttäjätilin
@@ -11,18 +11,14 @@ Sovellus pohjautuu kurssimateriaalissa olevaan keskustelusovellukseen. Sovellus 
 - Käyttäjä voi selata eri kategorioita ja niiden viestejä
 - Käyttäjä voi katsoa ketjun sisältöä
 - Käyttäjä voi kommentoida aloitettuun ketjuun/ viestiin
-- Käyttäjä voi tykätä toisen ketjun aloituksesta
+- Käyttäjä voi tykätä ketjun aloituksesta
 
-
-## Ei toimi vielä/ keskeneräisiä
-- Käyttäjä voi tykätä viestistä, mutta tykkäysten määrä ei näy oikein (näkyy kyllä tietokannassa, mutta ei sivulla) (keskeneräinen)
-- Käyttäjä voi hakea ketjuja/ viestejä hakusanoilla (ominaisuus ei vielä olemassa)
-- Ulkoasu miellyttävämmäksi viimeiseen palautukseen
 
 
 ## Ideoita jatkokehitykseen
 - Käyttäjä voi tykätä viestien kommenteista
 - Käyttäjä voi vastata suoraan kommenttiin
+- Käyttäjä voi hakea ketjuja/ viestejä hakusanoilla
 
 
 
